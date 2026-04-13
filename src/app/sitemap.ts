@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { cities, programmticPrefixes } from '@/data/cities';
+import { cities, programmaticPrefixes } from '@/data/cities';
 
 const BASE_URL = 'https://pshotnearme.com';
 
@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const programmaticRoutes: MetadataRoute.Sitemap = cities.flatMap(city =>
-    programmticPrefixes.map(prefix => ({
+    programmaticPrefixes.map(prefix => ({
       url: `${BASE_URL}/${prefix}-${city.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,

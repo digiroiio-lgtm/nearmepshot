@@ -33,7 +33,7 @@ export const cities: City[] = [
   { slug: "newcastle", name: "Newcastle", region: "Tyne and Wear", ukPrice: "£1,200–£2,000", turkeyPrice: "£250–£400", saving: "70%", population: "300,000", nearbyAirport: "Newcastle Airport (NCL)", flightTime: "4 hours" },
 ];
 
-export const programmticPrefixes = ['pshot-near-me', 'cheap-pshot', 'best-pshot'];
+export const programmaticPrefixes = ['pshot-near-me', 'cheap-pshot', 'best-pshot'];
 
 export function getCityBySlug(slug: string): City | undefined {
   return cities.find(c => c.slug === slug);
@@ -42,7 +42,7 @@ export function getCityBySlug(slug: string): City | undefined {
 export function generateProgrammaticSlugs(): { prefix: string; citySlug: string }[] {
   const result: { prefix: string; citySlug: string }[] = [];
   for (const city of cities) {
-    for (const prefix of programmticPrefixes) {
+    for (const prefix of programmaticPrefixes) {
       result.push({ prefix, citySlug: city.slug });
     }
   }
