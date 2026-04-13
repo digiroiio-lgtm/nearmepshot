@@ -9,6 +9,7 @@ import { FAQSection } from '@/components/FAQSection';
 import { TestimonialCard } from '@/components/TestimonialCard';
 import { generateCityMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema, generateFAQSchema } from '@/lib/schema';
+import { getWhatsAppUrl } from '@/lib/config';
 
 interface Props {
   params: Promise<{ city: string }>;
@@ -36,7 +37,7 @@ export default async function BestPshotCityPage({ params }: Props) {
   const city = getCityBySlug(citySlug);
   if (!city) notFound();
 
-  const WHATSAPP_URL = `https://wa.me/447700000000?text=${encodeURIComponent(`Hi, I'm looking for the best P-Shot treatment from ${city.name}.`)}`;
+  const WHATSAPP_URL = getWhatsAppUrl(`Hi, I'm looking for the best P-Shot treatment from ${city.name}.`);
   const localSchema = generateLocalBusinessSchema(city);
   const faqSchema = generateFAQSchema(faqItems);
 

@@ -1,11 +1,9 @@
 'use client';
 import Link from 'next/link';
-
-const WHATSAPP_NUMBER = '447700000000';
-const WHATSAPP_MESSAGE = 'Hi, I would like a free consultation about the P-Shot treatment.';
+import { getWhatsAppUrl, DEFAULT_WA_MESSAGE } from '@/lib/config';
 
 export function WhatsAppButton() {
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  const url = getWhatsAppUrl(DEFAULT_WA_MESSAGE);
   return (
     <Link
       href={url}

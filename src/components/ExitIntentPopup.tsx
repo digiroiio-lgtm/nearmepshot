@@ -1,9 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-
-const WHATSAPP_NUMBER = '447700000000';
-const WHATSAPP_MESSAGE = 'Hi, I saw the £50 discount offer. I would like a free consultation.';
+import { getWhatsAppUrl } from '@/lib/config';
 
 export function ExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,7 +24,7 @@ export function ExitIntentPopup() {
 
   if (!isVisible) return null;
 
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  const url = getWhatsAppUrl('Hi, I saw the £50 discount offer. I would like a free consultation.');
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4" onClick={dismiss}>

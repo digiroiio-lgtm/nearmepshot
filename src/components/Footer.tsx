@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { cities } from '@/data/cities';
+import { getWhatsAppUrl, DEFAULT_WA_MESSAGE } from '@/lib/config';
 
 export function Footer() {
   return (
@@ -37,7 +38,7 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-3">Contact</h3>
             <p className="text-sm mb-3">Free confidential consultation via WhatsApp</p>
             <Link
-              href={`https://wa.me/447700000000?text=${encodeURIComponent('Hi, I would like a free consultation about the P-Shot treatment.')}`}
+              href={getWhatsAppUrl(DEFAULT_WA_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"

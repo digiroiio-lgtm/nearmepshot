@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getWhatsAppUrl, DEFAULT_WA_MESSAGE } from '@/lib/config';
 
 export function Navbar() {
   return (
@@ -15,7 +16,7 @@ export function Navbar() {
             <Link href="/#faq" className="hover:text-blue-700 transition-colors">FAQ</Link>
           </div>
           <Link
-            href={`https://wa.me/447700000000?text=${encodeURIComponent('Hi, I would like a free consultation about the P-Shot treatment.')}`}
+            href={getWhatsAppUrl(DEFAULT_WA_MESSAGE)}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors"

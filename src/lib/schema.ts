@@ -1,5 +1,6 @@
 import { City } from '@/data/cities';
 import { FAQItem } from '@/data/faq';
+import { SITE_URL, WHATSAPP_NUMBER } from '@/lib/config';
 
 export function generateMedicalBusinessSchema() {
   return {
@@ -7,8 +8,8 @@ export function generateMedicalBusinessSchema() {
     '@type': 'MedicalBusiness',
     name: 'PShotNearMe – P-Shot Treatment Turkey',
     description: 'UK patients choose our partner clinic in Turkey for P-Shot treatment at 70% less than UK prices.',
-    url: 'https://pshotnearme.com',
-    telephone: '+447700000000',
+    url: SITE_URL,
+    telephone: `+${WHATSAPP_NUMBER}`,
     priceRange: '£250–£400',
     address: {
       '@type': 'PostalAddress',

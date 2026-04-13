@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { cities } from '@/data/cities';
 import { testimonials } from '@/data/testimonials';
 import { faqItems } from '@/data/faq';
+import { getWhatsAppUrl, DEFAULT_WA_MESSAGE } from '@/lib/config';
 import { PriceComparison } from '@/components/PriceComparison';
 import { FAQSection } from '@/components/FAQSection';
 import { TestimonialCard } from '@/components/TestimonialCard';
@@ -11,7 +12,7 @@ import { generateHomeMetadata } from '@/lib/metadata';
 
 export const metadata = generateHomeMetadata();
 
-const WHATSAPP_URL = `https://wa.me/447700000000?text=${encodeURIComponent('Hi, I would like a free consultation about the P-Shot treatment.')}`;
+const WHATSAPP_URL = getWhatsAppUrl(DEFAULT_WA_MESSAGE);
 
 const WhatsAppIcon = () => (
   <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
