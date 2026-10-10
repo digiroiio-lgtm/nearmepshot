@@ -51,7 +51,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 pt-6 text-xs text-center text-gray-500">
-          <p>© 2024 PShotNearMe.com · This site provides information about medical tourism. Always consult a qualified medical professional before undergoing any treatment.</p>
+          <p>© 2024 PShotNearMe.com · This site provides information about medical tourism. Always consult a qualified medical professional before undergoing any treatment. <a href="https://pshottreatment.com" className="underline hover:text-white">Read the clinical overview of P-Shot treatment</a></p>
         </div>
       </div>
     </footer>
